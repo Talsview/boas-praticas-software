@@ -1,17 +1,30 @@
 public class Sistema {
+
     public static void main(String[] args) {
-        String n = "Carlos";
-        double a = 8;
-        double b = 7;
-        double c = (a + b) / 2;
+        String nomeAluno = "Carlos";
+        double nota1 = 8.0;
+        double nota2 = 7.0;
 
-        System.out.println("Aluno: " + n);
-        System.out.println("Media: " + c);
+        double media = calcularMedia(nota1, nota2);
+        String situacao = verificarSituacao(media);
 
-        if (c >= 6) {
-            System.out.println("Aprovado");
-        } else {
-            System.out.println("Reprovado");
+        exibirResultado(nomeAluno, media, situacao);
+    }
+
+    public static double calcularMedia(double nota1, double nota2) {
+        return (nota1 + nota2) / 2.0;
+    }
+
+    public static String verificarSituacao(double media) {
+        if (media >= 6.0) {
+            return "Aprovado";
         }
+        return "Reprovado";
+    }
+
+    public static void exibirResultado(String nome, double media, String situacao) {
+        System.out.println("Aluno: " + nome);
+        System.out.println("Media: " + media);
+        System.out.println(situacao);
     }
 }
